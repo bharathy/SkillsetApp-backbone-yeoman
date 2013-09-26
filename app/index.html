@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="container" id="skillsetapp">
+            <h3>SkillSet Application</h3>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <!--left Col -->
+                    <div class="span5 lc">
+                        <p class="error"></p>
+                            <div class="control-group">
+                                <label class="control-label" for="inputSkill">Skill</label>
+                                <div class="controls">
+                                    <input type="text" id="inputSkill" placeholder="Add Skill">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputScore">Score</label>
+                                <div class="controls">
+                                    <input type="text" id="inputScore" placeholder="Score range 0 -5">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <button type="submit" id="addSkill" class="btn btn-primary">Add Skill</button>
+                            </div>
+                    </div>
+                    <!--right Col -->
+                    <div class="span7 rc">
+                            <table class="table table-bordered" id="skillList">
+                                <tr>
+                                    <th>SkillSets</th>
+                                    <th>Score</th>
+                                    <th>Action</th>
+                                </tr>
+                            </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--footer-->    
+        <div id="info">
+            <p>Written by Bharathy</p>
+        </div>
+
+        <!--micro template-->
+        <script type="text/template" id="item-template">
+                <td><%- skill %></td>
+                <td><%- score %></td>
+                <td><button class="destroy btn btn-danger">Delete</button></td> 
+        </script>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+        <!-- endbuild -->
+        
+
+        <!-- build:js({.tmp,app}) scripts/main.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/routes/skillRoute.js"></script>
+        <script src="scripts/views/skillListView.js"></script>
+        <script src="scripts/views/skillView.js"></script>
+        <script src="scripts/models/skillModel.js"></script>
+        <script src="scripts/collections/skillCollection.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
