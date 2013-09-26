@@ -1,7 +1,5 @@
 describe ("Skill List View", function(){
-	var skillList;
-	var skillListView;
-	var skillModel;
+	var skillList, skillListView, skillModel;
 	var fixture = '<div id="fixture"><div class="container hide"  id="skillsetapp">'+
             	'<div class="container-fluid">'+
                 '<div class="row-fluid">'+
@@ -36,7 +34,7 @@ describe ("Skill List View", function(){
 
 	beforeEach(function(){
 		$('#fixture').remove();
-    	$('body').append(fixture);
+    		$('body').append(fixture);
 		skillModel = new skillsetApp.Models.ApplicationModel();
 		skillList = new skillsetApp.Collections.ApplicationCollection();
 	 	skillListView = new skillsetApp.Views.ApplicationView({collection:skillList});
@@ -89,8 +87,8 @@ describe ("Skill List View", function(){
   		$('#addSkill').trigger("click");
   		var error = $('.error').html().split('<br/>');
   		//var focus= document.activeElement;  //finds what element on the page has focus
-        //expect(focus).toBe('#inputScore');
-        expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
+        	//expect(focus).toBe('#inputScore');
+        	expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
 	});
 
 	it("should throw error for  score having value < 0 ", function(){
@@ -99,7 +97,7 @@ describe ("Skill List View", function(){
 	  	skillListView.delegateEvents();
   		$('#addSkill').trigger("click");
   		var error = $('.error').html().split('<br/>');
-        expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
+        	expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
 	});
 
 	it("should throw error for  score having  non numeric value ", function(){
@@ -108,7 +106,7 @@ describe ("Skill List View", function(){
 	  	skillListView.delegateEvents();
   		$('#addSkill').trigger("click");
   		var error = $('.error').html().split('<br/>');
-        expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
+        	expect($('.error').html()).toContain('Please enter required score in 0 - 5 scale');
 	});
 
 	it("should throw error for Skill having repeated value instead of unique ", function(){
@@ -117,11 +115,11 @@ describe ("Skill List View", function(){
 	  	skillListView.delegateEvents();
   		$('#addSkill').trigger("click");
   		var error = $('.error').html().split('<br/>');
-        expect($('.error').html()).toContain('So please add new skill!');
+        	expect($('.error').html()).toContain('So please add new skill!');
 	});
 
 	afterEach(function() {
-    	$('#fixture').remove();
+    		$('#fixture').remove();
   	});
 
 });
